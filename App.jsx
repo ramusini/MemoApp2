@@ -15,13 +15,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="LogIn"
+        initialRouteName="SignUp"
         screenOptions={{
           headerStyle: { backgroundColor: '#467FD3' },
           headerTitleStyle: { color: '#ffffff' },
           headerTitle: 'MemoApp',
           /* androidの画面推移のアニメをiOS風にする */
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          /* androidでのスワイプバックを可能にする */
+          gestureEnabled: true,
+          gestureDirection: 'horizontal',
           /* iOSのバックボタンに色と文字を付与 */
           headerTintColor: '#ffffff',
           headerBackTitle: 'Back',
