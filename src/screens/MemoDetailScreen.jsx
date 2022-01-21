@@ -3,13 +3,12 @@ import {
   View, Text, StyleSheet, ScrollView,
 } from 'react-native';
 
-import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 
-export default function MemoDetailScreen() {
+export default function MemoDetailScreen(props) {
+  const { navigation } = props;
   return (
     <View style={styles.constainer}>
-      <AppBar />
       <View style={styles.memoHeader}>
         <Text style={styles.memoTitle}>買い物リスト</Text>
         <Text style={styles.memoDate}>2021年</Text>
@@ -23,7 +22,13 @@ export default function MemoDetailScreen() {
           </Text>
         </ScrollView>
       </View>
-      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit-2" />
+      <CircleButton
+        style={{ top: 60, bottom: 'auto' }}
+        name="edit-2"
+        /* 画面遷移がうまくいく？react-navigationよりApp.jsxのStack.Screenのところに自動的にnavigationが渡されているから。 */
+        onPress={() => { navigation.navigate('MemoEdit'); }}
+
+      />
     </View>
   );
 }
