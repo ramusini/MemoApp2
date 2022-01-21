@@ -1,19 +1,22 @@
 import { string, shape } from 'prop-types';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 export default function CircleButton(props) {
-  const { children, style } = props;
+  const { style, name } = props;
   return (
     <View style={[styles.cercleButton, style]}>
-      <Text style={styles.cercleButtonLabel}>{children}</Text>
+      {/* アイコンを@expo/vector-iconsから持ってきている。 */}
+      <Feather name={name} size={32} color="white" />
     </View>
   );
 }
 
+/* Validation（条件付け）を付与する */
 CircleButton.propTypes = {
-  children: string.isRequired,
   style: shape(),
+  name: string.isRequired,
 };
 
 CircleButton.defaultProps = {

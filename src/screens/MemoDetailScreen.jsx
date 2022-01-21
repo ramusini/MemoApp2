@@ -6,7 +6,7 @@ import {
 import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 
-export default function MemoDetaliScreen() {
+export default function MemoDetailScreen() {
   return (
     <View style={styles.constainer}>
       <AppBar />
@@ -23,7 +23,7 @@ export default function MemoDetaliScreen() {
           </Text>
         </ScrollView>
       </View>
-      <CircleButton style={{ top: 160, bottom: 'auto' }}>+</CircleButton>
+      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit-2" />
     </View>
   );
 }
