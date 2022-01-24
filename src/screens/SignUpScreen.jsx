@@ -5,6 +5,7 @@ import {
 import firebase from 'firebase';
 
 import Button from '../components/Button';
+import { transelateErrors } from '../utils';
 
 export default function SignUpScreen(props) {
   const { navigation } = props;
@@ -29,7 +30,9 @@ export default function SignUpScreen(props) {
       })
       /* 会員登録に失敗した場合（.catch）。これはerrorを受け取れる */
       .catch((error) => {
-        Alert.alert(error.code);
+        console.log(error.code, error.message);
+        const errorMsg = transelateErrors(error.code);
+        Alert.alert(errorMsg.title, errorMsg.description);
       });
   }
 
