@@ -50,7 +50,7 @@ export default function MemoDetailScreen(props) {
         style={{ top: 60, bottom: 'auto' }}
         name="edit-2"
         /* 画面遷移がうまくいく？react-navigationよりApp.jsxのStack.Screenのところに自動的にnavigationが渡されているから。 */
-        onPress={() => { navigation.navigate('MemoEdit'); }}
+        onPress={() => { navigation.navigate('MemoEdit', { id: memo.id, bodyText: memo.bodyText }); }}
       />
     </View>
   );
