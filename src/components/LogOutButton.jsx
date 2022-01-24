@@ -22,6 +22,7 @@ export default function LogOutButton() {
   }
 
   return (
+    /* eslint-disable-next-line */
     <TouchableOpacity onPress={handlePress} style={StyleSheet.container}>
       <Text style={styles.label}>ログアウト</Text>
     </TouchableOpacity>

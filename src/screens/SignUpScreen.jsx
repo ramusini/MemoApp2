@@ -5,7 +5,7 @@ import {
 import firebase from 'firebase';
 
 import Button from '../components/Button';
-import { transelateErrors } from '../utils';
+import { translateErrors } from '../utils';
 
 export default function SignUpScreen(props) {
   const { navigation } = props;
@@ -17,11 +17,7 @@ export default function SignUpScreen(props) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       /* 会員登録が成功した時（.then） */
       /* コールバック関数userCredentialがユーザー情報を受け取る */
-      .then((userCredential) => {
-        /* userCrudentialから、まずuserを抜き出す */
-        const { user } = userCredential;
-        /* そして、user.uidをコンソールに表示 */
-        console.log(user.uid);
+      .then(() => {
         /* submitボタンを押した時にテキストボックスを空にし、MemoListページに飛ぶ */
         navigation.reset({
           index: 0,
@@ -30,8 +26,7 @@ export default function SignUpScreen(props) {
       })
       /* 会員登録に失敗した場合（.catch）。これはerrorを受け取れる */
       .catch((error) => {
-        console.log(error.code, error.message);
-        const errorMsg = transelateErrors(error.code);
+        const errorMsg = translateErrors(error.code);
         Alert.alert(errorMsg.title, errorMsg.description);
       });
   }

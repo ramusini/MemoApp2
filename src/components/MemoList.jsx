@@ -12,6 +12,7 @@ import firebase from 'firebase';
 import { dateToString } from '../utils';
 
 export default function MemoList(props) {
+  /* eslint-disable-next-line */
   const { memos } = props;
   /* Screenたちと違い、navigationが自動で得られないことに注意 */
   const navigation = useNavigation();
@@ -64,6 +65,7 @@ export default function MemoList(props) {
     <View style={styles.container}>
       <FlatList
         data={memos}
+        /* eslint-disable-next-line */
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />

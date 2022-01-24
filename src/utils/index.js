@@ -5,7 +5,7 @@ export function dateToString(date) {
   return format(date, 'yyyy年M月d日 HH時mm分');
 }
 
-export function transelateErrors(code) {
+export function translateErrors(code) {
   const error = { title: 'エラー', description: '時間を置いておためしください' };
   switch (code) {
     case 'auth/invalid-email':
