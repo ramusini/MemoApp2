@@ -19,6 +19,11 @@
     ],
     "rules": {
         "no-use-before-define": 0,
-        "react/prop-types": ["error", { "ignore": ["navigation"] }]
+        "react/prop-types": ["error", { "ignore": ["navigation"] }],
+        "react/no-unstable-nested-components": [
+            "off" , "warn" , "error",
+            { "allowAsProps": true }
+          ]
     }
+
 }
