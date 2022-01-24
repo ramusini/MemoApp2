@@ -42,6 +42,7 @@ export default function MemoCreateScreen(props) {
       </View>
       <CircleButton
         name="check"
+        /* eslint-disable-next-line */
         onPress={handlePress}
       />
     </KeyboardSafeView>
