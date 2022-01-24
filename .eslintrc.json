@@ -23,7 +23,8 @@
         "react/no-unstable-nested-components": [
             "off" , "warn" , "error",
             { "allowAsProps": true }
-          ]
+          ],
+        "import/prefer-default-export": 0
     }
 
 }
