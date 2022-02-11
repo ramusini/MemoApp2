@@ -8,7 +8,7 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -18,13 +18,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ramusini.MemoApp2",
+      "buildNumber":"1.0.0"
     },
     "android": {
+      "versionCode": 1,
+      "permissions":[],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/icon_adaptive_foreground.png",
+        "backgroundImage": "./assets/icon_adaptive_background.png"
+      },
+      "package": "com.ramusini.MemoApp2"
+
     },
     "web": {
       "favicon": "./assets/favicon.png"
